@@ -30,6 +30,8 @@ func ConnectDB() {
 		panic(err)
 	}
 
+	defer Db.Close()
+
 	if err = Db.Ping(); err != nil {
 		panic(err)
 	}
